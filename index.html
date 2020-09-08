@@ -4,21 +4,73 @@
 <title>周家宝 ( ۳ ˚ Д ˚ ) ۳ 出发 ~-kabo233</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="css/base.css"/>
-<link rel="stylesheet" href="css/index.css"/>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="layui/css/layui.css">
+<script type="text/javascript;" src="js/jquery-2.1.4.min.js"></script>
+<script src="layui/layui.all.js"></script>
 </head>
 <body>
-<div class="left fl">
-	<div class="top">
-		<ul>
-			<li><a href="">123</a></li>
-		</ul>
+<div class="layui-fluid">
+	<div class="layui-row">
+		<div class="left layui-col-md10">
+			<div class="top">
+				<div class="layui-col-md2 logo layui-col-md-offset1"><a href=""><img src="images/logo1.png"/></a></div>
+				<ul class="nav layui-col-md7 layui-col-md-offset1">
+					<li class="nav-item"><a href="">项目</a></li>
+					<li class="nav-item"><a href="">代码插件</a></li>
+					<li class="nav-item"><a href="">小程序</a></li>
+					<li class="nav-item"><a href="">趣味api</a></li>
+					<li class="nav-item"><a href="">记事本</a></li>
+					<li class="nav-item"><a href="">关于我</a></li>
+					<div class="layui-clear"></div>
+				</ul>
+				<i class="layui-icon layui-icon-search"></i>
+				<div class="layui-clear"></div>
+			</div>
+			<div class="select layui-col-md12">
+				<form class="layui-form" action="" lay-filter="select">
+					<select name="select" lay-verify="" lay-search >
+						<option value="">搜索</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+					</select>
+					
+				</form>
+			</div>
+		</div>
+		<div class="right layui-col-md2">
+			<div class="r_top">
+				<div class="login"><a href="">登录</a>&emsp;/&emsp;<a href="">注册</a></div>
+				<div class="en"><a href="">EN</a>&nbsp;/&nbsp;<a href="">CN</a></div>
+			</div>
+		</div>
 	</div>
 </div>
-<div class="right fr">
-	
-</div>
-<div class="qf"></div>
-</body>
+<script>
+//一般直接写在一个js文件中
+layui.use(['layer', 'form'], function(){
+  var layer = layui.layer
+  ,form = layui.form;
+});
+
+</script> 
+<script>
+layui.use('form', function(){
+  var form = layui.form;
+  form.render(null, 'select'); //更新 lay-filter="select" 所在容器内的全部表单状态
+  
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+  form.on('select()', function(data){
+  console.log(data.elem); //得到select原始DOM对象
+  console.log(data.value); //得到被选中的值
+  console.log(data.othis); //得到美化后的DOM对象
+});      
+      
+});
+</script>
 </html>

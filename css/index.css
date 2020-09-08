@@ -1,0 +1,11 @@
+.top{padding:10px 0;}
+.logo a{display:inline-block;}
+.logo img{height:60px;}
+.nav .nav-item{float:left;line-height:60px;margin:0 12px;border-bottom:solid 2px #fff;}
+.nav .nav-item:hover{border-bottom:solid 2px #666;transition:1s;}
+.nav .nav-item a{display:inline-block;padding:0 8px;}
+.layui-fluid .right{border-left: solid 1px #ccc;position: fixed;bottom: 0;top: 0;right: 0;}
+.layui-fluid .layui-icon{font-size: 20px;line-height: 60px;cursor:pointer;float:right;padding-right:15px;}
+.login{font-size:16px;line-height:60px;float:left;}
+.en{font-size:14px;line-height: 60px;float:right;}
+.r_top{padding:10px 20px 0 20px;}
